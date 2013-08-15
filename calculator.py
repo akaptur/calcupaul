@@ -22,3 +22,7 @@ class Calculator(object):
         
         answer  = operation_function(first_number, second_number)
         return answer
+
+    def string_tokenizer(self, expression):
+        tokens = re.findall(r"(\D|\d+)", expression)
+        return [int(tok) if tok.isdigit() else tok for tok in tokens]
